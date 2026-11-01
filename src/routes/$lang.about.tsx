@@ -124,6 +124,38 @@ function About() {
         </Reveal>
       </section>
 
+      {/* Strategic Milestones Timeline */}
+      <section className="bg-soft py-24">
+        <div className="container-site">
+          <SectionHead label={t(lang, "about_label")} title={t(lang, "timeline_h2")}>
+            <p className="max-w-md text-sm text-graphite md:text-base">
+              {t(lang, "timeline_intro")}
+            </p>
+          </SectionHead>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {([1, 2, 3, 4] as const).map((step, i) => (
+              <Reveal
+                key={step}
+                delay={i * 90}
+                className="flex flex-col justify-between rounded-2xl border border-hairline bg-background p-8 transition-all hover:border-primary/40 hover:shadow-xs"
+              >
+                <div>
+                  <span className="text-3xl font-black text-primary ltr-iso">
+                    {t(lang, `tm_${step}_year` as never)}
+                  </span>
+                  <h3 className="mt-4 text-xl font-bold leading-snug">
+                    {t(lang, `tm_${step}_title` as never)}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-graphite">
+                    {t(lang, `tm_${step}_desc` as never)}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <ClosingBand lang={lang} />
     </>
   );

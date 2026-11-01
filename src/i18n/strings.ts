@@ -151,6 +151,50 @@ const en = {
   focus_label: "What we pay attention to",
   chart_label: "A long-term perspective",
   chart_note: "Illustrative only — a picture of patient, compounding growth, not reported figures.",
+
+  stat_1_val: "03",
+  stat_1_label: "Core Strategic Sectors",
+  stat_2_val: "10+ Yrs",
+  stat_2_label: "Long-Term Value Horizon",
+  stat_3_val: "GCC & UAE",
+  stat_3_label: "Regional Market Focus",
+  stat_4_val: "100%",
+  stat_4_label: "Ethical Governance Standard",
+
+  insights_h2: "Strategic Perspectives",
+  insights_intro: "Thoughtful developments and market directions across our active sectors.",
+  insight_1_tag: "Healthcare",
+  insight_1_title: "Strengthening Essential Pharmaceutical Supply Chains in the Region",
+  insight_1_body:
+    "How patient capital and disciplined partnerships are meeting rising demand for advanced medical solutions.",
+  insight_2_tag: "Investments",
+  insight_2_title: "Long-Term Stewardship in a Volatile Global Market",
+  insight_2_body:
+    "Why measured decision-making and deep sector understanding outlast short-term market fluctuations.",
+  insight_3_tag: "Consumer & Retail",
+  insight_3_title: "Responsive Distribution & Consumer Trust Dynamics",
+  insight_3_body:
+    "Leveraging scalable logistics infrastructure to build enduring customer loyalty and brand equity.",
+
+  timeline_h2: "Our Journey & Milestones",
+  timeline_intro:
+    "A deliberate path of measured growth, from foundational investments to diversified regional presence.",
+  tm_1_year: "2021",
+  tm_1_title: "Group Establishment & Healthcare Focus",
+  tm_1_desc:
+    "Inception of IBN SINAN HOLDINGS with an initial mandate dedicated to essential pharmaceutical partnerships.",
+  tm_2_year: "2023",
+  tm_2_title: "Diversified Investment Strategy",
+  tm_2_desc:
+    "Expansion into strategic capital deployment, focusing on high-conviction opportunities with sound fundamentals.",
+  tm_3_year: "2025",
+  tm_3_title: "Retail & Consumer Commercialization",
+  tm_3_desc:
+    "Broadening the portfolio into modern distribution infrastructure, consumer logistics, and commercial platforms.",
+  tm_4_year: "2026+",
+  tm_4_title: "Regional Integration & Enduring Scale",
+  tm_4_desc:
+    "Strengthening regional governance and compounding value across all three active holding pillars.",
 };
 
 export type StringKey = keyof typeof en;
@@ -294,6 +338,46 @@ const ar: Record<StringKey, string> = {
   focus_label: "ما الذي نوليه اهتمامنا",
   chart_label: "منظور طويل الأمد",
   chart_note: "رسم توضيحي فقط — صورة لنمو صبور ومتراكم، وليست أرقاماً مُعلنة.",
+
+  stat_1_val: "٠٣",
+  stat_1_label: "قطاعات استراتيجية رئيسية",
+  stat_2_val: "١٠+ سنوات",
+  stat_2_label: "أفق استثماري طويل الأمد",
+  stat_3_val: "الإمارات والخليج",
+  stat_3_label: "نطاق السوق الإقليمي",
+  stat_4_val: "١٠٠٪",
+  stat_4_label: "التزام كامل بمعايير الحوكمة",
+
+  insights_h2: "رؤى وتوجهات استراتيجية",
+  insights_intro: "تطورات مدروسة وتوجهات سوقية عبر قطاعاتنا النشطة.",
+  insight_1_tag: "الرعاية الصحية",
+  insight_1_title: "تعزيز سلاسل التوريد الدوائية الأساسية في المنطقة",
+  insight_1_body:
+    "كيف يلبي رأس المال الصبور والشراكات المنضبطة الطلب المتزايد على الحلول الطبية المتقدمة.",
+  insight_2_tag: "الاستثمارات",
+  insight_2_title: "الإدارة المسؤولة وطويلة الأمد في أسواق متغيرة",
+  insight_2_body:
+    "لماذا يتفوق اتخاذ القرارات المتأنية والفهم القطاعي العميق على تقلبات الأسواق قصيرة الأجل.",
+  insight_3_tag: "التجزئة والمستهلك",
+  insight_3_title: "ديناميكيات التوزيع المرن وثقة المستهلك الدائمة",
+  insight_3_body:
+    "الاستفادة من البنية التحتية اللوجستية القابلة للتوسع لبناء ولاء دائم وقيمة راسخة للعلامات التجارية.",
+
+  timeline_h2: "مسيرتنا ومحطات النمو",
+  timeline_intro:
+    "مسار مدروس من النمو المتأني، من الاستثمارات التأسيسية إلى الحضور الإقليمي المتنوع.",
+  tm_1_year: "٢٠٢١",
+  tm_1_title: "تأسيس المجموعة والتركيز الدوائي",
+  tm_1_desc: "انطلاق ابن سنان القابضة برؤية استراتيجية مخصصة لشراكات قطاع الأدوية والرعاية الصحية.",
+  tm_2_year: "٢٠٢٣",
+  tm_2_title: "تنويع المحفظة الاستثمارية",
+  tm_2_desc: "التوسع نحو توظيف رأس المال الاستراتيجي في فرص واعدة تتمتع بأسس متينة.",
+  tm_3_year: "٢٠٢٥",
+  tm_3_title: "تطوير قطاع التجزئة والمستهلك",
+  tm_3_desc: "توسيع المحفظة لتشمل البنية التحتية للتوزيع الحديث والخدمات اللوجستية التجارية.",
+  tm_4_year: "٢٠٢٦+",
+  tm_4_title: "التكامل الإقليمي والنمو المستدام",
+  tm_4_desc: "تعزيز الحوكمة الإقليمية وتنمية القيمة التراكمية عبر أركان المجموعة الثلاثة.",
 };
 
 export const STRINGS: Record<Lang, Record<StringKey, string>> = { en, ar };

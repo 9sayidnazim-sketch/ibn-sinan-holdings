@@ -1,6 +1,7 @@
 import type { L } from "@/i18n/strings";
 import pharma from "@/assets/pharma.jpg";
 import investments from "@/assets/investments.jpg";
+import retail from "@/assets/retail.jpg";
 
 /**
  * Sector content lives here only. To confirm the third sector, replace its
@@ -123,22 +124,66 @@ export const SECTORS: Sector[] = [
     published: true,
   },
   {
-    slug: "third-sector",
+    slug: "retail",
     num: "03",
-    name: { en: "Third Sector", ar: "القطاع الثالث" },
+    name: { en: "Retail & Consumer", ar: "التجزئة والسلع الاستهلاكية" },
     tagline: {
-      en: "[Editorial placeholder — awaiting confirmation of the third sector's name and activities.]",
-      ar: "[نص مؤقت — بانتظار تأكيد اسم القطاع الثالث وأنشطته.]",
+      en: "Developing resilient distribution networks and customer-focused commercial platforms.",
+      ar: "تطوير شبكات توزيع مرنة ومنصات تجارية متطورة تركز على احتياجات المستهلك.",
     },
-    linkLabel: { en: "Explore", ar: "استكشف" },
-    image: investments,
-    imageAlt: { en: "Placeholder image", ar: "صورة مؤقتة" },
-    h1: { en: "Third Sector", ar: "القطاع الثالث" },
-    intro: { en: "[To be written once the sector is confirmed.]", ar: "[يُكتب بعد تأكيد القطاع.]" },
-    sections: [],
-    focus: [],
-    cta: { en: "Contact us", ar: "تواصل معنا" },
-    published: false,
+    linkLabel: { en: "Explore Retail & Consumer", ar: "استكشف قطاع التجزئة" },
+    image: retail,
+    imageAlt: {
+      en: "Contemporary architectural commercial retail space with warm ambient lighting",
+      ar: "مساحة تجارية حديثة بإضاءة معمارية مميزة ودافئة",
+    },
+    h1: {
+      en: "Scale, responsiveness, and customer trust.",
+      ar: "الكفاءة والمرونة وثقة المستهلك الدائمة.",
+    },
+    intro: {
+      en: "Our retail and consumer sector focus is centered on high-efficiency distribution channels, premium consumer goods, and modern commercial infrastructure built for enduring brand equity.",
+      ar: "يركز قطاع التجزئة والسلع الاستهلاكية لدينا على قنوات التوزيع عالية الكفاءة، والمنتجات الاستهلاكية المتميزة، والبنية التحتية التجارية الحديثة المصممة لبناء علامات تجارية رائدة.",
+    },
+    sections: [
+      {
+        heading: { en: "Distribution & Market Access", ar: "شبكات التوزيع والوصول إلى الأسواق" },
+        body: {
+          en: "We partner with established and emerging consumer businesses to expand regional reach, streamline supply chains, and deliver essential products with speed, reliability, and precision.",
+          ar: "نتعاون مع الشركات الاستهلاكية الرائدة والواعدة لتوسيع نطاق الوصول الإقليمي، وتحسين سلاسل التوريد، وتقديم المنتجات الأساسية بسرعة وموثوقية ودقة عالية.",
+        },
+      },
+      {
+        heading: { en: "Consumer-Centric Innovation", ar: "الابتكار المتمحور حول المستهلك" },
+        body: {
+          en: "Consumer expectations evolve rapidly. We support enterprises that invest in elevated customer experiences, digital commerce capabilities, and responsive retail environments.",
+          ar: "تتطور تطلعات المستهلكين بسرعة مستمرة. نحن ندعم المؤسسات التي تستثمر في تجارب تسوق راقية، وقدرات تجارة رقمية متقدمة، وبيئات بيع تلبي الاحتياجات بكفاءة.",
+        },
+      },
+      {
+        heading: { en: "Responsible Commercial Growth", ar: "نمو تجاري مسؤول ومستدام" },
+        body: {
+          en: "Long-term value in consumer sectors requires ethical sourcing, robust vendor relationships, and disciplined inventory stewardship across every touchpoint.",
+          ar: "تتطلب القيمة طويلة الأمد في قطاعات المستهلكين مصادر مسؤولة، وعلاقات متينة مع الموردين، وإدارة منضبطة للمخزون عبر جميع نقاط الاتصال.",
+        },
+      },
+    ],
+    focus: [
+      {
+        en: "High-utility consumer goods and trusted lifestyle brands",
+        ar: "سلع استهلاكية أساسية وعلامات تجارية موثوقة",
+      },
+      {
+        en: "Scalable regional logistics and distribution infrastructure",
+        ar: "بنية تحتية لوجستية وقنوات توزيع قابلة للتوسع",
+      },
+      {
+        en: "Long-term brand equity and enduring customer loyalty",
+        ar: "قيمة راسخة للعلامة التجارية وولاء دائم للعملاء",
+      },
+    ],
+    cta: { en: "Discuss a Consumer Opportunity", ar: "ناقش فرصة في قطاع التجزئة" },
+    published: true,
   },
 ];
 

@@ -100,7 +100,7 @@ function Home() {
             }
             width={1920}
             height={1280}
-            className="hero-zoom absolute inset-0 h-full w-full object-cover grayscale"
+            className="hero-zoom absolute inset-0 h-full w-full object-cover"
           />
           <div
             className="absolute inset-0 bg-gradient-to-t from-night/95 via-night/70 to-night/40 md:bg-gradient-to-r md:from-night/90 md:via-night/60 md:to-night/20 rtl:md:bg-gradient-to-l"
@@ -127,6 +127,32 @@ function Home() {
             </div>
           </div>
         </Reveal>
+      </section>
+
+      {/* Key Figures / Group Metrics */}
+      <section className="container-site relative z-10 -mt-6 md:-mt-8">
+        <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline shadow-xs md:grid-cols-4">
+          {[
+            { v: "stat_1_val", l: "stat_1_label" },
+            { v: "stat_2_val", l: "stat_2_label" },
+            { v: "stat_3_val", l: "stat_3_label" },
+            { v: "stat_4_val", l: "stat_4_label" },
+          ].map((item, i) => (
+            <Reveal
+              as="li"
+              key={item.v}
+              delay={i * 60}
+              className="flex flex-col justify-center bg-background px-6 py-7 md:px-8 md:py-9"
+            >
+              <div className="text-2xl font-black tracking-tight text-primary md:text-4xl ltr-iso">
+                {t(lang, item.v as never)}
+              </div>
+              <div className="mt-2 text-xs font-semibold text-graphite md:text-sm">
+                {t(lang, item.l as never)}
+              </div>
+            </Reveal>
+          ))}
+        </ul>
       </section>
 
       {/* About — text left, principles as a 2x2 stats-style grid right */}
@@ -239,7 +265,7 @@ function Home() {
                     : "A quiet professional working environment"
                 }
                 ratio="4 / 5"
-                className="rounded-2xl grayscale"
+                className="rounded-2xl"
               />
             </div>
           </Reveal>
@@ -267,6 +293,52 @@ function Home() {
             </Reveal>
           </ol>
         </div>
+      </section>
+
+      {/* Strategic Perspectives / Insights */}
+      <section className="container-site pb-20 md:pb-28">
+        <Reveal className="mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <div className="label-caps mb-3 text-primary">{t(lang, "about_label")}</div>
+            <h2 className="text-3xl font-extrabold md:text-5xl">{t(lang, "insights_h2")}</h2>
+            <p className="mt-4 max-w-lg text-graphite">{t(lang, "insights_intro")}</p>
+          </div>
+          <BtnLink to="/$lang/contact" params={{ lang }} variant="secondary">
+            {t(lang, "cta_partnership")} <Arrow />
+          </BtnLink>
+        </Reveal>
+        <ul className="grid gap-6 md:grid-cols-3">
+          {([1, 2, 3] as const).map((num, i) => (
+            <Reveal
+              as="li"
+              key={num}
+              delay={i * 100}
+              className="flex flex-col justify-between rounded-2xl border border-hairline bg-background p-8 transition-all hover:border-primary/40 hover:shadow-xs"
+            >
+              <div>
+                <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
+                  {t(lang, `insight_${num}_tag` as never)}
+                </span>
+                <h3 className="mt-5 text-xl font-bold leading-snug text-foreground md:text-2xl">
+                  {t(lang, `insight_${num}_title` as never)}
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-graphite md:text-base">
+                  {t(lang, `insight_${num}_body` as never)}
+                </p>
+              </div>
+              <div className="mt-8 border-t border-hairline/60 pt-5">
+                <Link
+                  to="/$lang/partnerships"
+                  params={{ lang }}
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-primary"
+                >
+                  {t(lang, "nav_partnerships")}
+                  <Arrow className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                </Link>
+              </div>
+            </Reveal>
+          ))}
+        </ul>
       </section>
 
       <ClosingBand lang={lang} />
