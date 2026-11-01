@@ -21,6 +21,30 @@ export const Route = createFileRoute("/$lang/")({
   component: Home,
 });
 
+/** Decorative blueprint corner crosshairs for modern minimal grid boxes */
+function BlueprintCorners() {
+  return (
+    <>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute top-2 start-2 h-2.5 w-2.5 border-t-2 border-s-2 border-primary/50"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute top-2 end-2 h-2.5 w-2.5 border-t-2 border-e-2 border-primary/50"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute bottom-2 start-2 h-2.5 w-2.5 border-b-2 border-s-2 border-primary/50"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute bottom-2 end-2 h-2.5 w-2.5 border-b-2 border-e-2 border-primary/50"
+      />
+    </>
+  );
+}
+
 /** Decorative dotted-grid vector accent. */
 function DotGrid({ className }: { className?: string }) {
   return (
@@ -88,35 +112,58 @@ function Home() {
   const sectors = publishedSectors();
   return (
     <div className="bg-corporate-mesh min-h-screen">
-      {/* Hero — rounded card on modern corporate background */}
+      {/* Hero — Motion Video with Architectural Blueprint Framing */}
       <section className="container-site pt-28 md:pt-32">
-        <Reveal className="relative overflow-hidden rounded-2xl ring-1 ring-black/10 shadow-lg">
-          <img
-            src={hero}
-            alt={
-              lang === "ar"
-                ? "واجهة برج شركة حديثة في ضوء الصباح"
-                : "A modern corporate tower facade in morning light"
-            }
-            width={1920}
-            height={1280}
-            className="hero-zoom absolute inset-0 h-full w-full object-cover"
-          />
+        <Reveal className="blue-grid-box relative overflow-hidden rounded-3xl border border-primary/35 shadow-2xl bg-night">
+          <BlueprintCorners />
+
+          {/* Background Motion Video with Poster Fallback */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={hero}
+            className="hero-zoom absolute inset-0 h-full w-full object-cover opacity-90"
+          >
+            <source src="/videos/city-skyline.webm" type="video/webm" />
+            <source src="/videos/hero-skyline.webm" type="video/webm" />
+          </video>
+
+          {/* Fine architectural grid mesh over video */}
           <div
-            className="absolute inset-0 bg-gradient-to-t from-night/95 via-night/70 to-night/40 md:bg-gradient-to-r md:from-night/90 md:via-night/60 md:to-night/20 rtl:md:bg-gradient-to-l"
+            className="absolute inset-0 bg-corporate-grid opacity-20 pointer-events-none"
             aria-hidden
           />
-          <div className="relative flex min-h-[72vh] flex-col justify-center p-8 md:p-16">
+
+          {/* Dark sapphire gradient vignette for pristine typography contrast */}
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-night/95 via-night/70 to-night/35 md:bg-gradient-to-r md:from-night/95 md:via-night/65 md:to-night/25 rtl:md:bg-gradient-to-l"
+            aria-hidden
+          />
+
+          {/* Live Motion Perspective Pill */}
+          <div className="absolute top-6 end-6 z-10 hidden sm:flex items-center gap-2.5 rounded-full border border-white/20 bg-night/60 px-4 py-1.5 backdrop-blur-md text-[11px] font-bold tracking-wider text-white">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-80" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+            </span>
+            <span className="uppercase">
+              {lang === "ar" ? "رؤية حية // حركة مؤسسية" : "LIVE AMBIENT MOTION"}
+            </span>
+          </div>
+
+          <div className="relative flex min-h-[72vh] flex-col justify-center p-8 md:p-16 lg:p-20">
             <div className="mb-6">
               <span className="corporate-badge border-white/20 bg-white/10 text-white backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
                 {t(lang, "hero_eyebrow")}
               </span>
             </div>
-            <h1 className="max-w-xl text-[40px] font-extrabold leading-[1.05] text-white md:text-[64px]">
+            <h1 className="max-w-2xl text-[40px] font-black leading-[1.05] text-white md:text-[64px] drop-shadow-sm">
               {t(lang, "hero_h1")}
             </h1>
-            <p className="mt-6 max-w-md text-base text-white/85 md:text-lg">
+            <p className="mt-6 max-w-lg text-base text-white/90 md:text-xl leading-relaxed">
               {t(lang, "hero_lede")}
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
@@ -126,7 +173,7 @@ function Home() {
               <BtnLink
                 to="/$lang/contact"
                 params={{ lang }}
-                className="border border-white/60 bg-transparent text-white hover:bg-white hover:text-night"
+                className="border border-white/60 bg-transparent text-white hover:bg-white hover:text-night font-semibold px-7"
               >
                 {t(lang, "hero_cta2")}
               </BtnLink>
@@ -135,9 +182,9 @@ function Home() {
         </Reveal>
       </section>
 
-      {/* Key Figures / Group Metrics */}
+      {/* Key Figures / Group Metrics — Grid Blue Boxes */}
       <section className="container-site relative z-10 -mt-6 md:-mt-8">
-        <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline shadow-xs md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {[
             { v: "stat_1_val", l: "stat_1_label" },
             { v: "stat_2_val", l: "stat_2_label" },
@@ -145,56 +192,72 @@ function Home() {
             { v: "stat_4_val", l: "stat_4_label" },
           ].map((item, i) => (
             <Reveal
-              as="li"
+              as="div"
               key={item.v}
               delay={i * 60}
-              className="flex flex-col justify-center bg-background px-6 py-7 md:px-8 md:py-9"
+              className="blue-grid-box blue-grid-box-tint relative rounded-2xl p-6 md:p-8 flex flex-col justify-center"
             >
-              <div className="text-2xl font-black tracking-tight text-primary md:text-4xl ltr-iso">
+              <BlueprintCorners />
+              <div className="text-3xl font-black tracking-tight text-primary md:text-5xl ltr-iso">
                 {t(lang, item.v as never)}
               </div>
-              <div className="mt-2 text-xs font-semibold text-graphite md:text-sm">
+              <div className="mt-2 text-xs font-bold uppercase tracking-wider text-graphite md:text-sm">
                 {t(lang, item.l as never)}
               </div>
             </Reveal>
           ))}
-        </ul>
+        </div>
       </section>
 
       {/* About — text left, principles as a 2x2 stats-style grid right */}
       <section className="container-site py-20 md:py-28">
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2 items-center">
           <Reveal>
-            <h2 className="text-3xl font-extrabold md:text-5xl">{t(lang, "about_h2")}</h2>
-            <p className="mt-6 max-w-md text-graphite">{t(lang, "about_copy")}</p>
+            <div className="corporate-badge mb-3">{t(lang, "about_label")}</div>
+            <h2 className="text-3xl font-extrabold md:text-5xl text-foreground">
+              {t(lang, "about_h2")}
+            </h2>
+            <p className="mt-6 max-w-md text-lg text-graphite leading-relaxed">
+              {t(lang, "about_copy")}
+            </p>
             <Link
               to="/$lang/about"
               params={{ lang }}
-              className="group mt-8 inline-flex items-center gap-2 font-semibold text-primary"
+              className="group mt-8 inline-flex items-center gap-2 font-bold text-primary"
             >
               {t(lang, "about_link")}
               <Arrow className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
             </Link>
           </Reveal>
-          <div className="space-y-6">
-            <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline">
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-4">
               {(["pr_1", "pr_2", "pr_3", "pr_4"] as const).map((k, i) => (
                 <Reveal
-                  as="li"
+                  as="div"
                   key={k}
                   delay={i * 80}
-                  className="flex flex-col justify-center bg-background p-8"
+                  className="blue-grid-box relative flex flex-col justify-between rounded-2xl p-6 md:p-7"
                 >
-                  <span className="label-caps ltr-iso text-primary">
+                  <BlueprintCorners />
+                  <span className="corporate-badge ltr-iso w-fit text-xs">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="mt-2 text-lg font-bold leading-snug md:text-xl">{t(lang, k)}</p>
+                  <p className="mt-4 text-base font-bold leading-snug md:text-lg text-foreground">
+                    {t(lang, k)}
+                  </p>
                 </Reveal>
               ))}
-            </ul>
-            <Reveal delay={200} className="relative overflow-hidden rounded-2xl bg-night p-8">
-              <div className="label-caps text-white/70">{t(lang, "chart_label")}</div>
-              <p className="mt-2 max-w-sm text-sm text-white/60">{t(lang, "chart_note")}</p>
+            </div>
+            <Reveal
+              delay={200}
+              className="blue-grid-box relative overflow-hidden rounded-2xl bg-night p-8 text-white border-primary/35"
+            >
+              <BlueprintCorners />
+              <div className="flex items-center justify-between">
+                <div className="label-caps text-white/80">{t(lang, "chart_label")}</div>
+                <span className="h-2 w-2 rounded-full bg-primary" />
+              </div>
+              <p className="mt-2 max-w-sm text-sm text-white/70">{t(lang, "chart_note")}</p>
               <div className="mt-6">
                 <GrowthChart />
               </div>
@@ -203,7 +266,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Sectors — modern corporate cards */}
+      {/* Sectors — Bento Grid of Blue Boxes */}
       <section className="container-site relative pb-20 md:pb-28">
         <DotGrid className="absolute -top-4 end-0 hidden lg:block" />
         <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-6">
@@ -216,27 +279,28 @@ function Home() {
             {t(lang, "nav_sectors")} <Arrow />
           </BtnLink>
         </Reveal>
-        <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {sectors.map((s, i) => (
             <Reveal as="li" key={s.slug} delay={i * 100}>
               <Link
                 to="/$lang/sectors/$sector"
                 params={{ lang, sector: s.slug }}
-                className="group corporate-card flex h-full flex-col justify-between overflow-hidden rounded-2xl p-4 md:p-5"
+                className="group blue-grid-box relative flex h-full flex-col justify-between overflow-hidden rounded-3xl p-5 md:p-6"
               >
+                <BlueprintCorners />
                 <div>
-                  <div className="overflow-hidden rounded-xl">
+                  <div className="overflow-hidden rounded-2xl border border-primary/20">
                     <Img
                       src={s.image}
                       alt={tr(s.imageAlt, lang)}
                       ratio="4 / 5"
-                      className="rounded-xl"
+                      className="rounded-2xl transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="pt-5">
                     <div className="flex items-center justify-between">
-                      <span className="corporate-badge text-[10px]">{s.num}</span>
-                      <span className="text-xs font-semibold text-graphite group-hover:text-primary transition-colors">
+                      <span className="corporate-badge text-[11px]">{s.num}</span>
+                      <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors">
                         {t(lang, "nav_sectors")}
                       </span>
                     </div>
@@ -248,8 +312,8 @@ function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="border-t border-hairline/70 px-4 pt-4 pb-2">
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                <div className="mt-6 border-t border-primary/15 pt-4">
+                  <span className="inline-flex items-center gap-2 text-sm font-bold text-primary">
                     {tr(s.linkLabel, lang)}
                     <Arrow className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                   </span>
@@ -262,8 +326,9 @@ function Home() {
         {/* Executive Partnership Bar */}
         <Reveal
           delay={300}
-          className="mt-12 overflow-hidden rounded-2xl bg-night p-8 md:p-12 text-white shadow-lg"
+          className="blue-grid-box relative mt-12 overflow-hidden rounded-3xl bg-night p-8 md:p-12 text-white shadow-xl border-primary/40"
         >
+          <BlueprintCorners />
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div className="max-w-2xl">
               <span className="corporate-badge border-white/20 bg-white/10 text-white">
@@ -272,7 +337,9 @@ function Home() {
               <h3 className="mt-4 text-2xl font-extrabold text-white md:text-3xl">
                 {t(lang, "invite_h2")}
               </h3>
-              <p className="mt-2 text-sm text-white/80 md:text-base">{t(lang, "invite_copy")}</p>
+              <p className="mt-2 text-sm text-white/80 md:text-base leading-relaxed">
+                {t(lang, "invite_copy")}
+              </p>
             </div>
             <BtnLink to="/$lang/contact" params={{ lang }} variant="night">
               {t(lang, "cta_partnership")} <Arrow />
@@ -281,45 +348,52 @@ function Home() {
         </Reveal>
       </section>
 
-      {/* Approach — image left, numbered steps right */}
+      {/* Approach — image left, numbered steps in blue boxes right */}
       <section className="container-site relative pb-20 md:pb-28">
         <DotGrid className="absolute bottom-0 start-0 hidden lg:block" />
         <Reveal className="mb-10">
+          <div className="corporate-badge mb-3">{t(lang, "nav_approach")}</div>
           <h2 className="text-3xl font-extrabold md:text-5xl">{t(lang, "approach_h2")}</h2>
         </Reveal>
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2 items-center">
           <Reveal>
-            <div className="overflow-hidden rounded-2xl">
-              <Img
-                src={aboutImg}
-                alt={
-                  lang === "ar"
-                    ? "بيئة عمل مهنية هادئة"
-                    : "A quiet professional working environment"
-                }
-                ratio="4 / 5"
-                className="rounded-2xl"
-              />
+            <div className="blue-grid-box relative overflow-hidden rounded-3xl p-4">
+              <BlueprintCorners />
+              <div className="overflow-hidden rounded-2xl">
+                <Img
+                  src={aboutImg}
+                  alt={
+                    lang === "ar"
+                      ? "بيئة عمل مهنية هادئة"
+                      : "A quiet professional working environment"
+                  }
+                  ratio="4 / 5"
+                  className="rounded-2xl"
+                />
+              </div>
             </div>
           </Reveal>
-          <ol>
+          <ol className="space-y-4">
             {PRINCIPLES.map((p, i) => (
               <Reveal
                 as="li"
                 key={p.num}
                 delay={i * 90}
-                className="flex gap-5 border-b border-hairline py-7 first:pt-0 last:border-b-0"
+                className="blue-grid-box relative flex items-start gap-5 rounded-2xl p-6"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-night text-sm font-bold text-white ltr-iso">
-                  {p.num}
-                </span>
+                <BlueprintCorners />
+                <span className="corporate-badge ltr-iso text-xs shrink-0 mt-1">{p.num}</span>
                 <div>
-                  <h3 className="text-lg font-extrabold md:text-xl">{tr(p.title, lang)}</h3>
-                  <p className="mt-1 text-sm text-graphite md:text-base">{tr(p.body, lang)}</p>
+                  <h3 className="text-lg font-extrabold md:text-xl text-foreground">
+                    {tr(p.title, lang)}
+                  </h3>
+                  <p className="mt-1 text-sm text-graphite md:text-base leading-relaxed">
+                    {tr(p.body, lang)}
+                  </p>
                 </div>
               </Reveal>
             ))}
-            <Reveal delay={380} className="pt-8">
+            <Reveal delay={380} className="pt-4">
               <BtnLink to="/$lang/approach" params={{ lang }} variant="secondary">
                 {t(lang, "approach_link")} <Arrow />
               </BtnLink>
@@ -328,7 +402,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Strategic Perspectives / Insights */}
+      {/* Strategic Perspectives / Insights — Bento Grid of Blue Boxes */}
       <section className="container-site pb-20 md:pb-28">
         <Reveal className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div>
@@ -346,10 +420,11 @@ function Home() {
               as="li"
               key={num}
               delay={i * 100}
-              className="flex flex-col justify-between rounded-2xl border border-hairline bg-background p-8 transition-all hover:border-primary/40 hover:shadow-xs"
+              className="blue-grid-box blue-grid-box-tint relative flex flex-col justify-between rounded-3xl p-8"
             >
+              <BlueprintCorners />
               <div>
-                <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
+                <span className="corporate-badge text-xs">
                   {t(lang, `insight_${num}_tag` as never)}
                 </span>
                 <h3 className="mt-5 text-xl font-bold leading-snug text-foreground md:text-2xl">
@@ -359,11 +434,11 @@ function Home() {
                   {t(lang, `insight_${num}_body` as never)}
                 </p>
               </div>
-              <div className="mt-8 border-t border-hairline/60 pt-5">
+              <div className="mt-8 border-t border-primary/15 pt-5">
                 <Link
                   to="/$lang/partnerships"
                   params={{ lang }}
-                  className="group inline-flex items-center gap-2 text-sm font-semibold text-primary"
+                  className="group inline-flex items-center gap-2 text-sm font-bold text-primary"
                 >
                   {t(lang, "nav_partnerships")}
                   <Arrow className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />

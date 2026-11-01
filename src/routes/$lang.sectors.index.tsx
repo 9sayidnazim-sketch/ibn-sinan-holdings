@@ -13,6 +13,29 @@ export const Route = createFileRoute("/$lang/sectors/")({
   component: Sectors,
 });
 
+function BlueprintCorners() {
+  return (
+    <>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute top-2 start-2 h-2.5 w-2.5 border-t-2 border-s-2 border-primary/50"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute top-2 end-2 h-2.5 w-2.5 border-t-2 border-e-2 border-primary/50"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute bottom-2 start-2 h-2.5 w-2.5 border-b-2 border-s-2 border-primary/50"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute bottom-2 end-2 h-2.5 w-2.5 border-b-2 border-e-2 border-primary/50"
+      />
+    </>
+  );
+}
+
 function Sectors() {
   const lang = Route.useParams().lang as Lang;
   return (
@@ -38,27 +61,28 @@ function Sectors() {
             {t(lang, "sectors_intro")}
           </p>
         </Reveal>
-        <ul className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {publishedSectors().map((s, i) => (
             <Reveal as="li" key={s.slug} delay={i * 120}>
               <Link
                 to="/$lang/sectors/$sector"
                 params={{ lang, sector: s.slug }}
-                className="group corporate-card flex h-full flex-col justify-between rounded-2xl p-4 md:p-5"
+                className="group blue-grid-box relative flex h-full flex-col justify-between rounded-3xl p-5 md:p-6"
               >
+                <BlueprintCorners />
                 <div>
-                  <div className="overflow-hidden rounded-xl">
+                  <div className="overflow-hidden rounded-2xl border border-primary/20">
                     <Img
                       src={s.image}
                       alt={tr(s.imageAlt, lang)}
                       ratio="4 / 5"
-                      className="rounded-xl"
+                      className="rounded-2xl transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="pt-5">
                     <div className="flex items-center justify-between">
                       <span className="corporate-badge text-[10px]">{s.num}</span>
-                      <span className="text-xs font-semibold text-graphite group-hover:text-primary transition-colors">
+                      <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors">
                         {t(lang, "nav_sectors")}
                       </span>
                     </div>
@@ -70,8 +94,8 @@ function Sectors() {
                     </p>
                   </div>
                 </div>
-                <div className="border-t border-hairline/70 px-4 pt-4 pb-2">
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                <div className="mt-6 border-t border-primary/15 pt-4">
+                  <span className="inline-flex items-center gap-2 text-sm font-bold text-primary">
                     {tr(s.linkLabel, lang)}
                     <Arrow className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                   </span>
