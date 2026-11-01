@@ -6,17 +6,20 @@ export const Route = createFileRoute("/")({
   },
   head: () => ({
     meta: [
-      { title: "Ibn Sinan Holdings — Commercial property" },
+      { title: "IBN SINAN HOLDINGS — Built on purpose. Focused on lasting value." },
       {
         name: "description",
         content:
-          "Offices, warehouses, shopfronts and land, matched to the work the space has to do.",
+          "A shared vision for progress across pharmaceuticals, investment, and a growing business portfolio.",
       },
-      { property: "og:title", content: "Ibn Sinan Holdings — Commercial property" },
+      {
+        property: "og:title",
+        content: "IBN SINAN HOLDINGS — Built on purpose. Focused on lasting value.",
+      },
       {
         property: "og:description",
         content:
-          "Offices, warehouses, shopfronts and land, matched to the work the space has to do.",
+          "A shared vision for progress across pharmaceuticals, investment, and a growing business portfolio.",
       },
     ],
   }),

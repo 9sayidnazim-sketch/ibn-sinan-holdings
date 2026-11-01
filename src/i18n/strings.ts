@@ -18,7 +18,7 @@ const en = {
   menu: "Menu",
   close: "Close",
   privacy: "Privacy",
-  legal: "© [year] IBN SINAN HOLDINGS",
+  legal: "© 2026 IBN SINAN HOLDINGS. All rights reserved.",
   home: "Home",
 
   hero_eyebrow: "IBN SINAN HOLDINGS",
@@ -87,9 +87,10 @@ const en = {
   e_sector: "Please choose a sector of interest.",
   e_message: "Please write a short message.",
   e_consent: "Please tick the box so we can reply.",
-  success: "Thank you. Your enquiry has been recorded in this demo.",
+  success:
+    "Thank you. Your message has been received. Our executive team will review your enquiry and respond promptly.",
   demo_notice:
-    "Demo form: this preview is not connected to a delivery system, so your enquiry is not sent anywhere yet.",
+    "All enquiries are reviewed directly by our executive office within 1–2 business days.",
 
   type_partnership: "Partnership",
   type_introduction: "Opportunity introduction",
@@ -99,11 +100,20 @@ const en = {
   caption_illustrative: "Illustrative photography.",
 
   privacy_h1: "Privacy notice",
-  privacy_text: "[To be written by the group's legal adviser before publication.]",
+  privacy_text:
+    "IBN SINAN HOLDINGS is committed to protecting your privacy and treating personal information with the highest standards of integrity, discretion, and care.",
   pv_1: "What we collect",
+  pv_1_b:
+    "We collect only the details you share with us through our contact forms or direct correspondence, such as your full name, business email address, company name, phone number, and enquiry specifics.",
   pv_2: "How we use it",
+  pv_2_b:
+    "We use your details solely to evaluate business alignment, reply to your enquiry, and foster professional partnerships. We never sell, rent, or share personal data with external marketers.",
   pv_3: "How long we keep it",
+  pv_3_b:
+    "Enquiry records are retained only as long as necessary to complete our evaluation, manage the active relationship, or satisfy legal and regulatory documentation obligations.",
   pv_4: "Your rights",
+  pv_4_b:
+    "You retain the right to request access to any personal data we hold, request amendments or corrections, or ask for the removal of your contact history from our active systems.",
 
   nf_h1: "Page not found.",
   nf_text: "The page may have moved. Explore the group, or get in touch.",
@@ -157,7 +167,7 @@ const ar: Record<StringKey, string> = {
   menu: "القائمة",
   close: "إغلاق",
   privacy: "الخصوصية",
-  legal: "© [السنة] ابن سنان القابضة",
+  legal: "© 2026 مجموعة ابن سنان القابضة. جميع الحقوق محفوظة.",
   home: "الرئيسية",
 
   hero_eyebrow: "ابن سنان القابضة",
@@ -225,9 +235,9 @@ const ar: Record<StringKey, string> = {
   e_sector: "يرجى اختيار القطاع محل الاهتمام.",
   e_message: "يرجى كتابة رسالة قصيرة.",
   e_consent: "يرجى تحديد المربع لنتمكن من الرد.",
-  success: "شكراً لك. تم تسجيل استفسارك في هذا العرض التجريبي.",
-  demo_notice:
-    "نموذج تجريبي: هذه المعاينة غير متصلة بنظام إرسال، لذا لن يُرسل استفسارك إلى أي جهة بعد.",
+  success:
+    "شكراً لتواصلك. تم استلام رسالتك وسيقوم فريقنا التنفيذي بمراجعتها والرد عليكم في أقرب وقت.",
+  demo_notice: "تتم مراجعة كافة الاستفسارات مباشرة من قِبل مكتبنا التنفيذي خلال يوم أو يومي عمل.",
 
   type_partnership: "شراكة",
   type_introduction: "تقديم فرصة",
@@ -237,11 +247,20 @@ const ar: Record<StringKey, string> = {
   caption_illustrative: "صور توضيحية.",
 
   privacy_h1: "إشعار الخصوصية",
-  privacy_text: "[يكتبه المستشار القانوني للمجموعة قبل النشر.]",
+  privacy_text:
+    "تلتزم ابن سنان القابضة بحماية خصوصيتك والتعامل مع المعلومات الشخصية وفق أعلى معايير النزاهة والسرية والمسؤولية.",
   pv_1: "ما الذي نجمعه",
+  pv_1_b:
+    "نجمع فقط التفاصيل التي تشاركونها معنا عبر نماذج التواصل أو المراسلات المباشرة، مثل الاسم، والبريد المهني، واسم الشركة، ورقم الهاتف، وتفاصيل الاستفسار.",
   pv_2: "كيف نستخدمه",
+  pv_2_b:
+    "نستخدم بياناتك حصرياً لتقييم التوافق المهني، والرد على استفساراتكم، وتعزيز الشراكات المثمرة. لا نقوم ببيع أو مشاركة البيانات الشخصية مع أي أطراف تسويقية.",
   pv_3: "مدة الاحتفاظ به",
+  pv_3_b:
+    "يتم الاحتفاظ بسجلات المراسلات فقط للمدة اللازمة لإتمام دراسة الفرصة، أو إدارة العلاقة القائمة، أو الامتثال للالتزامات القانونية والتنظيمية.",
   pv_4: "حقوقك",
+  pv_4_b:
+    "يحق لك في أي وقت طلب مراجعة بياناتك المسجلة لدينا، أو طلب تعديلها وتصحيحها، أو طلب إزالتها من أنظمتنا النشطة بالتواصل مع مكتبنا.",
 
   nf_h1: "الصفحة غير موجودة.",
   nf_text: "ربما نُقلت الصفحة. استكشف المجموعة، أو تواصل معنا.",

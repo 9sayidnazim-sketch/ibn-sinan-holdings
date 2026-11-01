@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import partnershipsImg from "@/assets/partnerships.jpg";
 import { t, type Lang } from "@/i18n/strings";
 import { Arrow, BtnLink, Crumbs, Img, Reveal, SectionHead } from "@/components/site/ui";
+import { ClosingBand } from "@/components/site/Shell";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/$lang/partnerships")({
@@ -109,6 +110,7 @@ function Partnerships() {
           </Reveal>
         ))}
       </section>
+      <ClosingBand lang={lang} />
     </>
   );
 }

@@ -103,7 +103,7 @@ function Home() {
             className="hero-zoom absolute inset-0 h-full w-full object-cover grayscale"
           />
           <div
-            className="absolute inset-0 bg-gradient-to-r from-night/80 via-night/45 to-night/10 rtl:bg-gradient-to-l"
+            className="absolute inset-0 bg-gradient-to-t from-night/95 via-night/70 to-night/40 md:bg-gradient-to-r md:from-night/90 md:via-night/60 md:to-night/20 rtl:md:bg-gradient-to-l"
             aria-hidden
           />
           <div className="relative flex min-h-[70vh] flex-col justify-center p-8 md:p-16">

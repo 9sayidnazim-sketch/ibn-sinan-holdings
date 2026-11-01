@@ -33,8 +33,8 @@ function Contact() {
   const [sending, setSending] = useState(false);
 
   const inputCls =
-    "mt-2 w-full rounded-md border border-input bg-background px-4 py-3 text-base focus:border-primary";
-  const labelCls = "block text-sm font-medium";
+    "mt-2 w-full min-h-[48px] rounded-lg border border-hairline bg-background px-4 py-3 text-base text-foreground transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
+  const labelCls = "block text-sm font-semibold text-foreground/90";
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -90,11 +90,27 @@ function Contact() {
         </div>
         <div className="md:col-span-6 md:col-start-7">
           {sent ? (
-            <Reveal className="rounded-lg border border-hairline bg-soft p-10">
-              <h2 className="text-2xl">{t(lang, "success")}</h2>
-              <BtnLink to="/$lang" params={{ lang }} variant="secondary" className="mt-8">
-                {t(lang, "back_home")}
-              </BtnLink>
+            <Reveal className="rounded-2xl border border-hairline bg-soft p-10">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  aria-hidden
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h2 className="mt-6 text-2xl font-bold leading-snug md:text-3xl">
+                {t(lang, "success")}
+              </h2>
+              <div className="mt-8">
+                <BtnLink to="/$lang" params={{ lang }} variant="secondary">
+                  {t(lang, "back_home")}
+                </BtnLink>
+              </div>
             </Reveal>
           ) : (
             <Reveal delay={100}>
