@@ -16,7 +16,7 @@ export const Route = createFileRoute("/$lang/sectors/")({
 function Sectors() {
   const lang = Route.useParams().lang as Lang;
   return (
-    <>
+    <div className="bg-corporate-mesh min-h-screen">
       <section className="container-site pb-24 pt-36 md:pt-44">
         <Crumbs
           items={[
@@ -32,37 +32,56 @@ function Sectors() {
           ]}
         />
         <Reveal>
-          <h1 className="mt-8 max-w-3xl text-4xl md:text-6xl">{t(lang, "sectors_h2")}</h1>
-          <p className="mt-8 max-w-2xl text-lg text-graphite md:text-xl">
+          <div className="corporate-badge mt-8 mb-4">{t(lang, "nav_sectors")}</div>
+          <h1 className="max-w-3xl text-4xl font-extrabold md:text-6xl">{t(lang, "sectors_h2")}</h1>
+          <p className="mt-6 max-w-2xl text-lg text-graphite md:text-xl">
             {t(lang, "sectors_intro")}
           </p>
         </Reveal>
-        <ul className="mt-16 grid gap-10 md:grid-cols-2">
+        <ul className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {publishedSectors().map((s, i) => (
             <Reveal as="li" key={s.slug} delay={i * 120}>
               <Link
                 to="/$lang/sectors/$sector"
                 params={{ lang, sector: s.slug }}
-                className="group block"
+                className="group corporate-card flex h-full flex-col justify-between rounded-2xl p-4 md:p-5"
               >
-                <Img src={s.image} alt={tr(s.imageAlt, lang)} ratio="4 / 5" />
-                <div className="mt-5 flex items-baseline gap-4">
-                  <span className="label-caps ltr-iso text-primary">{s.num}</span>
-                  <h2 className="text-2xl transition-colors group-hover:text-primary md:text-3xl">
-                    {tr(s.name, lang)}
-                  </h2>
+                <div>
+                  <div className="overflow-hidden rounded-xl">
+                    <Img
+                      src={s.image}
+                      alt={tr(s.imageAlt, lang)}
+                      ratio="4 / 5"
+                      className="rounded-xl"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="corporate-badge text-[10px]">{s.num}</span>
+                      <span className="text-xs font-semibold text-graphite group-hover:text-primary transition-colors">
+                        {t(lang, "nav_sectors")}
+                      </span>
+                    </div>
+                    <h2 className="mt-4 text-2xl font-bold transition-colors group-hover:text-primary md:text-3xl">
+                      {tr(s.name, lang)}
+                    </h2>
+                    <p className="mt-2 text-sm leading-relaxed text-graphite">
+                      {tr(s.tagline, lang)}
+                    </p>
+                  </div>
                 </div>
-                <p className="mt-2 max-w-md text-graphite">{tr(s.tagline, lang)}</p>
-                <span className="mt-3 inline-flex items-center gap-2 font-medium text-primary">
-                  {tr(s.linkLabel, lang)}
-                  <Arrow className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
-                </span>
+                <div className="border-t border-hairline/70 px-4 pt-4 pb-2">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    {tr(s.linkLabel, lang)}
+                    <Arrow className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                  </span>
+                </div>
               </Link>
             </Reveal>
           ))}
         </ul>
       </section>
       <ClosingBand lang={lang} />
-    </>
+    </div>
   );
 }

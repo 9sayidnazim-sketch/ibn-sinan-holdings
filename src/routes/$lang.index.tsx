@@ -87,10 +87,10 @@ function Home() {
   const lang = Route.useParams().lang as Lang;
   const sectors = publishedSectors();
   return (
-    <div className="bg-soft">
-      {/* Hero — rounded card on a soft canvas */}
+    <div className="bg-corporate-mesh min-h-screen">
+      {/* Hero — rounded card on modern corporate background */}
       <section className="container-site pt-28 md:pt-32">
-        <Reveal className="relative overflow-hidden rounded-2xl">
+        <Reveal className="relative overflow-hidden rounded-2xl ring-1 ring-black/10 shadow-lg">
           <img
             src={hero}
             alt={
@@ -106,7 +106,13 @@ function Home() {
             className="absolute inset-0 bg-gradient-to-t from-night/95 via-night/70 to-night/40 md:bg-gradient-to-r md:from-night/90 md:via-night/60 md:to-night/20 rtl:md:bg-gradient-to-l"
             aria-hidden
           />
-          <div className="relative flex min-h-[70vh] flex-col justify-center p-8 md:p-16">
+          <div className="relative flex min-h-[72vh] flex-col justify-center p-8 md:p-16">
+            <div className="mb-6">
+              <span className="corporate-badge border-white/20 bg-white/10 text-white backdrop-blur-md">
+                <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                {t(lang, "hero_eyebrow")}
+              </span>
+            </div>
             <h1 className="max-w-xl text-[40px] font-extrabold leading-[1.05] text-white md:text-[64px]">
               {t(lang, "hero_h1")}
             </h1>
@@ -197,55 +203,82 @@ function Home() {
         </div>
       </section>
 
-      {/* Sectors — rounded image cards */}
+      {/* Sectors — modern corporate cards */}
       <section className="container-site relative pb-20 md:pb-28">
         <DotGrid className="absolute -top-4 end-0 hidden lg:block" />
-        <Reveal className="mb-10 flex flex-wrap items-end justify-between gap-6">
+        <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <div>
+            <div className="corporate-badge mb-3">{t(lang, "nav_sectors")}</div>
             <h2 className="text-3xl font-extrabold md:text-5xl">{t(lang, "sectors_h2")}</h2>
-            <p className="mt-4 max-w-sm text-graphite">{t(lang, "sectors_intro")}</p>
+            <p className="mt-4 max-w-lg text-graphite">{t(lang, "sectors_intro")}</p>
           </div>
+          <BtnLink to="/$lang/sectors" params={{ lang }} variant="secondary">
+            {t(lang, "nav_sectors")} <Arrow />
+          </BtnLink>
         </Reveal>
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {sectors.map((s, i) => (
             <Reveal as="li" key={s.slug} delay={i * 100}>
               <Link
                 to="/$lang/sectors/$sector"
                 params={{ lang, sector: s.slug }}
-                className="group block"
+                className="group corporate-card flex h-full flex-col justify-between overflow-hidden rounded-2xl p-4 md:p-5"
               >
-                <div className="overflow-hidden rounded-2xl">
-                  <Img
-                    src={s.image}
-                    alt={tr(s.imageAlt, lang)}
-                    ratio="4 / 5"
-                    className="rounded-2xl"
-                  />
+                <div>
+                  <div className="overflow-hidden rounded-xl">
+                    <Img
+                      src={s.image}
+                      alt={tr(s.imageAlt, lang)}
+                      ratio="4 / 5"
+                      className="rounded-xl"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="corporate-badge text-[10px]">{s.num}</span>
+                      <span className="text-xs font-semibold text-graphite group-hover:text-primary transition-colors">
+                        {t(lang, "nav_sectors")}
+                      </span>
+                    </div>
+                    <h3 className="mt-4 text-xl font-extrabold text-foreground transition-colors group-hover:text-primary md:text-2xl">
+                      {tr(s.name, lang)}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-graphite">
+                      {tr(s.tagline, lang)}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="mt-5 text-xl font-extrabold transition-colors group-hover:text-primary md:text-2xl">
-                  {tr(s.name, lang)}
-                </h3>
-                <p className="mt-1 text-sm text-graphite">{tr(s.tagline, lang)}</p>
+                <div className="border-t border-hairline/70 px-4 pt-4 pb-2">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    {tr(s.linkLabel, lang)}
+                    <Arrow className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                  </span>
+                </div>
               </Link>
             </Reveal>
           ))}
-          <Reveal as="li" delay={sectors.length * 100}>
-            <Link
-              to="/$lang/contact"
-              params={{ lang }}
-              className="group flex h-full min-h-[280px] flex-col items-start justify-between rounded-2xl bg-night p-8 text-white"
-            >
-              <span className="label-caps text-white/70">{t(lang, "nav_contact")}</span>
-              <div>
-                <h3 className="text-xl font-extrabold md:text-2xl">{t(lang, "invite_h2")}</h3>
-                <span className="mt-4 inline-flex items-center gap-2 font-semibold text-white">
-                  {t(lang, "hero_cta2")}
-                  <Arrow className="transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
-                </span>
-              </div>
-            </Link>
-          </Reveal>
         </ul>
+
+        {/* Executive Partnership Bar */}
+        <Reveal
+          delay={300}
+          className="mt-12 overflow-hidden rounded-2xl bg-night p-8 md:p-12 text-white shadow-lg"
+        >
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <div className="max-w-2xl">
+              <span className="corporate-badge border-white/20 bg-white/10 text-white">
+                {t(lang, "nav_partnerships")}
+              </span>
+              <h3 className="mt-4 text-2xl font-extrabold text-white md:text-3xl">
+                {t(lang, "invite_h2")}
+              </h3>
+              <p className="mt-2 text-sm text-white/80 md:text-base">{t(lang, "invite_copy")}</p>
+            </div>
+            <BtnLink to="/$lang/contact" params={{ lang }} variant="night">
+              {t(lang, "cta_partnership")} <Arrow />
+            </BtnLink>
+          </div>
+        </Reveal>
       </section>
 
       {/* Approach — image left, numbered steps right */}

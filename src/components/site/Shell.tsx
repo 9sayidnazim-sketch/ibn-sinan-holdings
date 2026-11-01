@@ -18,21 +18,35 @@ function swapPath(path: string, to: Lang) {
 
 export function BrandLogo({ lang, inverted = false }: { lang: Lang; inverted?: boolean }) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3.5">
       <div
         className={cn(
-          "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border text-sm font-extrabold tracking-wider transition-colors",
+          "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all shadow-xs",
           inverted
-            ? "border-white/20 bg-white/10 text-white"
-            : "border-primary/20 bg-primary/10 text-primary",
+            ? "bg-white/15 text-white ring-1 ring-white/25"
+            : "bg-primary text-white shadow-primary/20 ring-1 ring-primary/30",
         )}
       >
-        <span>IS</span>
+        <svg viewBox="0 0 32 32" fill="none" className="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16 3L28 9.5V22.5L16 29L4 22.5V9.5L16 3Z"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M16 3V29M4 9.5L28 22.5M4 22.5L28 9.5"
+            stroke="currentColor"
+            strokeWidth="1.25"
+            strokeOpacity="0.4"
+          />
+          <circle cx="16" cy="16" r="3" fill="currentColor" />
+        </svg>
       </div>
-      <div className="flex flex-col leading-tight">
+      <div className="flex flex-col leading-none">
         <span
           className={cn(
-            "text-base font-extrabold tracking-tight",
+            "text-[17px] font-black tracking-tight",
             inverted ? "text-white" : "text-foreground",
           )}
         >
@@ -40,11 +54,11 @@ export function BrandLogo({ lang, inverted = false }: { lang: Lang; inverted?: b
         </span>
         <span
           className={cn(
-            "text-[10px] font-semibold tracking-[0.18em] uppercase",
+            "mt-1 text-[10px] font-bold tracking-[0.22em] uppercase",
             inverted ? "text-white/70" : "text-primary",
           )}
         >
-          {lang === "ar" ? "القابضة" : "HOLDINGS"}
+          {lang === "ar" ? "مجموعة قابضة" : "HOLDINGS"}
         </span>
       </div>
     </div>

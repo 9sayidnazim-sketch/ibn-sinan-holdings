@@ -195,6 +195,19 @@ const en = {
   tm_4_title: "Regional Integration & Enduring Scale",
   tm_4_desc:
     "Strengthening regional governance and compounding value across all three active holding pillars.",
+
+  approach_eyebrow: "Governance & Framework",
+  part_eyebrow: "Strategic Partnerships",
+  contact_eyebrow: "Executive Office",
+  hq_title: "Headquarters & Regional Presence",
+  hq_location: "United Arab Emirates & GCC",
+  hq_hours_label: "Operating Schedule",
+  hq_hours_val: "Monday – Friday: 08:30 – 17:30 (GST)",
+  hq_confidentiality_title: "Discretion & Governance",
+  hq_confidentiality_val:
+    "All introductions and proposals are handled with strict executive confidentiality.",
+  sector_discuss_title: "Explore Collaboration",
+  sector_discuss_desc: "Speak directly with our team regarding opportunities in this sector.",
 };
 
 export type StringKey = keyof typeof en;
@@ -378,6 +391,19 @@ const ar: Record<StringKey, string> = {
   tm_4_year: "٢٠٢٦+",
   tm_4_title: "التكامل الإقليمي والنمو المستدام",
   tm_4_desc: "تعزيز الحوكمة الإقليمية وتنمية القيمة التراكمية عبر أركان المجموعة الثلاثة.",
+
+  approach_eyebrow: "إطار الحوكمة المؤسسية",
+  part_eyebrow: "الشراكات الاستراتيجية",
+  contact_eyebrow: "المكتب التنفيذي",
+  hq_title: "المقر الرئيسي والحضور الإقليمي",
+  hq_location: "دولة الإمارات العربية المتحدة ودول مجلس التعاون",
+  hq_hours_label: "أوقات العمل الرسمية",
+  hq_hours_val: "الاثنين – الجمعة: ٠٨:٣٠ – ١٧:٣٠ (توقيت الإمارات)",
+  hq_confidentiality_title: "السرية والحوكمة",
+  hq_confidentiality_val:
+    "تُعامل جميع المقترحات والمراسلات بسرية تنفيذية تامة ومعايير حوكمة دقيقة.",
+  sector_discuss_title: "استكشف آفاق التعاون",
+  sector_discuss_desc: "تواصل مباشرة مع فريقنا لمناقشة الفرص في هذا القطاع.",
 };
 
 export const STRINGS: Record<Lang, Record<StringKey, string>> = { en, ar };
