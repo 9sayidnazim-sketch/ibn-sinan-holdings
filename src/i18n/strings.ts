@@ -154,8 +154,8 @@ const en = {
 
   stat_1_val: "03",
   stat_1_label: "Core Strategic Sectors",
-  stat_2_val: "10+ Yrs",
-  stat_2_label: "Long-Term Value Horizon",
+  stat_2_val: "Long-Term",
+  stat_2_label: "Value Creation Horizon",
   stat_3_val: "GCC & UAE",
   stat_3_label: "Regional Market Focus",
   stat_4_val: "100%",
@@ -354,8 +354,8 @@ const ar: Record<StringKey, string> = {
 
   stat_1_val: "٠٣",
   stat_1_label: "قطاعات استراتيجية رئيسية",
-  stat_2_val: "١٠+ سنوات",
-  stat_2_label: "أفق استثماري طويل الأمد",
+  stat_2_val: "طويل الأمد",
+  stat_2_label: "أفق خلق القيمة وتنميتها",
   stat_3_val: "الإمارات والخليج",
   stat_3_label: "نطاق السوق الإقليمي",
   stat_4_val: "١٠٠٪",
