@@ -17,6 +17,18 @@ function swapPath(path: string, to: Lang) {
 }
 
 export function BrandLogo({ lang, inverted = false }: { lang: Lang; inverted?: boolean }) {
+  if (lang === "en") {
+    return (
+      <div className="flex items-center">
+        <img
+          src={inverted ? "/logo-white.png" : "/logo-blue.png"}
+          alt="IBN SINAN HOLDINGS"
+          className="h-8 md:h-9 w-auto object-contain transition-opacity"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="flex items-center gap-3.5">
       <div
@@ -50,7 +62,7 @@ export function BrandLogo({ lang, inverted = false }: { lang: Lang; inverted?: b
             inverted ? "text-white" : "text-foreground",
           )}
         >
-          {lang === "ar" ? "ابن سنان" : "IBN SINAN"}
+          ابن سنان
         </span>
         <span
           className={cn(
@@ -58,7 +70,7 @@ export function BrandLogo({ lang, inverted = false }: { lang: Lang; inverted?: b
             inverted ? "text-white/70" : "text-primary",
           )}
         >
-          {lang === "ar" ? "مجموعة قابضة" : "HOLDINGS"}
+          مجموعة قابضة
         </span>
       </div>
     </div>
