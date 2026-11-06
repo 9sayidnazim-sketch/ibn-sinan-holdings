@@ -1,29 +1,43 @@
-# Welcome to your Lovable project
+# IBN SINAN HOLDINGS (ابن سنان القابضة)
 
-This project was built with [Lovable](https://lovable.dev).
+> A modern, bilingual corporate holding group platform engineered with a clean, high-conviction Swiss/Linear editorial aesthetic.
 
-## Build with Lovable
+[![Live on Vercel](https://img.shields.io/badge/Vercel-Live%20Production-black?style=flat&logo=vercel)](https://ibn-sinan-holdings.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github)](https://github.com/9sayidnazim-sketch/ibn-sinan-holdings)
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+---
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## 🌐 Live Environments
+- **Primary Domain**: [https://ibn-sinan-holdings.vercel.app](https://ibn-sinan-holdings.vercel.app)
+- **English (`/en`)**: [https://ibn-sinan-holdings.vercel.app/en](https://ibn-sinan-holdings.vercel.app/en)
+- **Arabic (`/ar`)**: [https://ibn-sinan-holdings.vercel.app/ar](https://ibn-sinan-holdings.vercel.app/ar)
 
-## Development
+---
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## 🚀 Tech Stack
+- **Framework**: TanStack Start / React 19
+- **Routing**: TanStack Router (File-based, Type-safe)
+- **Styling**: Tailwind CSS v4 (OKLCH color system)
+- **i18n**: Fully bilingual English / Arabic (RTL support)
+- **Deployment**: Vercel (Build Output API v3)
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+---
+
+## 🛠️ Getting Started Locally
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/9sayidnazim-sketch/ibn-sinan-holdings.git
+cd ibn-sinan-holdings
+
+# 2. Install dependencies
+npm install
+
+# 3. Start local development server
 npm run dev
+
+# 4. Build for Vercel production
+NITRO_PRESET=vercel npm run build
 ```
 
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+See [HANDOFF.md](./HANDOFF.md) for full architecture details, deployment notes, and asset guidelines.
